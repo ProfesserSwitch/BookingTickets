@@ -18,10 +18,9 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   final List<String> seats = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']; 
   final List<String> theaters = ['C01', 'C02', 'C03', 'C04', 'C05', 'C06', 'C07', 'C08', 'C09', 'C10']; // รายชื่อโรงภาพยนตร์
 
-  // ฟังก์ชันเพิ่มหนัง (อัปเดตให้แจ้งเตือนเมื่อข้อมูลไม่ครบ)
+  // เพิ่มข้อมูลการจอง
   Future<void> addMovie() async {
     if (_movieController.text.isEmpty || _selectedTheater == null || _selectedSeat == null) {
-      // 🔔 แสดง Alert แจ้งเตือน
       showDialog(
         context: context,
         builder: (context) {
@@ -96,9 +95,9 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   // ฟังก์ชันแสดงโรงภาพยนตร์แบบเลื่อนซ้ายขวา
   Widget buildTheaterSelector() {
     return SizedBox(
-      height: 40, // ความสูงของรายการโรงภาพยนตร์
+      height: 40, 
       child: ListView.builder(
-        scrollDirection: Axis.horizontal, // ✅ ทำให้เลื่อนซ้ายขวา
+        scrollDirection: Axis.horizontal, 
         itemCount: theaters.length,
         itemBuilder: (context, index) {
           String theater = theaters[index];
@@ -110,7 +109,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               });
             },
             child: Container(
-              width: 70, // ✅ ขนาดกล่องโรงภาพยนตร์
+              width: 70, 
               margin: const EdgeInsets.symmetric(horizontal: 5),
               decoration: BoxDecoration(
                 color: isSelected ? Colors.green : Colors.grey,
@@ -129,7 +128,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     );
   }
 
-  // ฟังก์ชันแสดงที่นั่งในรูปแบบกริด
+  // แสดงที่นั่ง
   Widget buildSeatGrid() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
