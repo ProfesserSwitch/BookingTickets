@@ -41,7 +41,6 @@ class _ShowMoviesScreenState extends State<ShowMoviesScreen> {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              // การเลือกโรงภาพยนตร์
               DropdownButtonFormField<String>(
                 value: selectedTheater,
                 decoration: const InputDecoration(labelText: "เลือกโรงภาพยนตร์"),
